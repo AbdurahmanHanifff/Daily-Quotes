@@ -1,0 +1,29 @@
+{
+  "name": "daily-quote-feed",
+  "version": "2.0.0",
+  "private": true,
+  "description": "A swipeable daily quote app for web, Android and iPhone",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test tests/core.test.js",
+    "test:e2e": "node scripts/build.js && node tests/e2e.js",
+    "serve": "node scripts/serve.js",
+    "sync": "REQUIRE_NATIVE=1 node scripts/build.js && cap sync"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.6.3",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.6.3",
+    "@capacitor/filesystem": "8.1.5",
+    "@capacitor/ios": "8.6.3",
+    "@capacitor/local-notifications": "8.3.1",
+    "@capacitor/preferences": "8.0.1",
+    "@capacitor/share": "8.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.3",
+    "@fontsource/figtree": "5.3.0",
+    "@fontsource/newsreader": "5.3.0",
+    "esbuild": "0.25.10"
+  }
+}

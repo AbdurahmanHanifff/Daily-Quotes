@@ -1,0 +1,56 @@
+<div id="app">
+<header>
+  <div class="top">
+    <button class="icon" id="streak" aria-label="Day streak"></button>
+    <nav role="tablist">
+      <button role="tab" data-tab="fy">For You</button>
+      <button role="tab" data-tab="saved">Saved</button>
+      <button role="tab" data-tab="written">Written</button>
+    </nav>
+    <button class="icon" id="menu" aria-label="Settings">⚙</button>
+  </div>
+  <input id="search" type="search" aria-label="Search quotes" hidden>
+  <div id="chips" hidden></div>
+</header>
+<main id="feed" tabindex="0"><section class="card empty"><p>Loading your quotes…</p></section></main>
+<footer>
+  <div class="group"><button class="ghost" id="prev" aria-label="Previous quote">↑</button><button class="ghost" id="next" aria-label="Next quote">↓</button></div>
+  <span id="count"></span>
+  <button class="primary" id="write">+ Write</button>
+</footer>
+<div id="toast" role="status" hidden></div>
+
+<div id="picker" class="full" role="dialog" aria-modal="true" aria-labelledby="pickTitle" hidden>
+  <div class="scroll">
+    <h1 id="pickTitle">What would you like to read?</h1>
+    <p>Choose one or more. Your daily quote comes from your choices, and you can change them any time.</p>
+    <button class="ghost" id="all" type="button">Select all</button>
+    <div id="beliefs"></div>
+  </div>
+  <div class="bar"><button class="ghost" id="pickCancel" type="button">Cancel</button><button class="primary" id="pickDone" type="button">Start reading</button></div>
+</div>
+
+<div id="sheet" class="shade" hidden><form id="form" class="panel">
+  <h2 id="sheetTitle">Write a quote</h2>
+  <label for="qText">Quote<textarea id="qText" maxlength="600"></textarea></label>
+  <label for="qBy">Author (leave blank to sign it "You")<input id="qBy" maxlength="80"></label>
+  <p id="err" role="alert" hidden></p>
+  <div class="row end"><button type="button" class="ghost" id="cancel">Cancel</button><button class="primary">Save quote</button></div>
+</form></div>
+
+<div id="settings" class="shade" hidden><div class="panel" role="dialog" aria-modal="true" aria-label="Settings">
+  <div class="row"><h2>Settings</h2><button class="ghost" id="close" type="button">Done</button></div>
+  <button class="line" id="editBeliefs" type="button">Change belief systems <span id="chosen"></span></button>
+  <label class="line" for="size">Text size<select id="size"><option value="0.88">Small</option><option value="1">Medium</option><option value="1.18">Large</option></select></label>
+  <div id="reminderRow" hidden>
+    <label class="line" for="remind">Daily reminder<input type="checkbox" id="remind"></label>
+    <label class="line" for="remindAt">Reminder time<input type="time" id="remindAt" value="08:00"></label>
+  </div>
+  <p class="note" id="remindNote">Daily reminders work in the installed Android and iPhone apps.</p>
+  <button class="line" id="export" type="button">Back up saved and written quotes</button>
+  <label class="line" for="import">Restore from a backup<input type="file" id="import" accept=".json,application/json"></label>
+  <button class="line danger" id="erase" type="button">Erase all my data</button>
+  <details class="note"><summary>Privacy</summary><p>There are no ads, analytics or tracking. In the Android, iPhone and standalone web versions, your choices, saved quotes and written quotes are stored on your device and are not sent to the developer. In the claude.ai version they are stored in a private space for your account. A quote leaves the app only when you copy, share or back it up. Erase all my data removes what the app has stored; delete any backup files or copies yourself.</p></details>
+  <p class="note">"Paraphrase" means the line is put in plain words and is not a direct quotation. Check the cited source before you quote it elsewhere.</p>
+</div></div>
+</div>
